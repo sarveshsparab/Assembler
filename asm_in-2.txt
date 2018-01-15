@@ -1,0 +1,19 @@
+.model small
+.data
+a1 dd 4
+a2 dd ?
+a3 dd 5 dup(0)
+.code
+.startup
+main mov eax,ebx
+mov bx,[ecx]
+mov bx,[1234h]
+jz target_label
+loop1 mov esi,edi
+mov edi,ebp
+mov ebp,edx
+jg loop1
+target_label mov eax,eax
+jg main
+.exit
+end 
